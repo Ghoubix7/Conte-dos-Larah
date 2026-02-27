@@ -225,5 +225,31 @@
 
   <footer>© 2024 | Meus Conteúdos</footer>
 
+
+<script>
+let tempoQualificado = 3000; // 3 segundos
+
+function leadQualificado(nomeEvento) {
+  let saiuDaPagina = false;
+
+  function handleBlur() {
+    saiuDaPagina = true;
+  }
+
+  window.addEventListener("blur", handleBlur);
+
+  setTimeout(function() {
+    if (!saiuDaPagina) {
+      fbq('trackCustom', nomeEvento);
+    }
+    window.removeEventListener("blur", handleBlur);
+  }, tempoQualificado);
+}
+</script>
+
+
+
+
+  
 </body>
 </html>
