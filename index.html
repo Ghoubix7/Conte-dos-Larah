@@ -177,7 +177,7 @@
 <a href="https://t.me/OgLarahaGabrielly_bot#"
    class="btn btn-preview"
    target="_blank"
-   onclick="fbq('trackCustom','Concluir inscrição'); leadQualificado('Lead Qualificado - Grupo VIP');"
+   onclick="fbq('trackCustom','Concluir inscrição'); leadqualificado();"
    rel="noopener noreferrer">
   <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="22">
   Meu Grupo VIP
@@ -186,7 +186,7 @@
 
 <a href="https://oglarah-privacy.vercel.app/privacyonlinebrasil.shop/index.html"
    class="btn btn-privacy"
-   onclick="fbq('trackCustom','Iniciar período de avaliação'); leadQualificado('Lead Qualificado - Privacy');"
+   onclick="fbq('trackCustom','Iniciar período de avaliação'); leadqualificado();"
    target="_blank"
    rel="noopener noreferrer">
 
@@ -228,7 +228,7 @@
 <script>
 let tempoQualificado = 3000; // 3 segundos
 
-function leadQualificado(nomeEvento) {
+function leadQualificado() {
   let saiuDaPagina = false;
 
   function handleBlur() {
@@ -239,7 +239,7 @@ function leadQualificado(nomeEvento) {
 
   setTimeout(function() {
     if (!saiuDaPagina) {
-      fbq('trackCustom', nomeEvento);
+      fbq('trackCustom', 'lead qualificado');
     }
     window.removeEventListener("blur", handleBlur);
   }, tempoQualificado);
